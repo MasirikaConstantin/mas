@@ -101,3 +101,81 @@ Ce travail a permis de démontrer l’efficacité de l’utilisation des VLANs d
 ---
 
 Cela constitue un exemple complet que vous pouvez adapter en fonction des détails réels de votre travail et de vos tests.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+### Rapport sur la configuration de VLANs dans un réseau d'entreprise
+
+---
+
+#### Introduction
+
+La gestion efficace d'un réseau d'entreprise implique souvent l'utilisation de VLANs (Virtual Local Area Networks). Les VLANs permettent de segmenter un réseau physique en plusieurs sous-réseaux virtuels pour améliorer la sécurité, réduire les collisions et optimiser les performances du réseau. Dans ce rapport, nous allons explorer l'implémentation d'une configuration VLAN pour une entreprise avec trois départements distincts. L'objectif de ce travail est de configurer ces VLANs, de tester leur fonctionnalité dans un environnement simulé et d'analyser les performances et la sécurité du réseau ainsi configuré.
+
+---
+
+#### Méthodologie
+
+Pour cette tâche, nous avons utilisé **Cisco Packet Tracer** comme simulateur de réseau pour configurer et tester les VLANs. Les étapes principales incluent :
+
+1. **Choix des équipements** : Nous avons utilisé des switches de type L2 et L3, ainsi que des ordinateurs (PC-PT) connectés à différents VLANs.
+2. **Configuration des VLANs** : Nous avons défini les VLANs pour chaque département de l'entreprise, à savoir :
+   - VLAN 2 pour le département Comptabilité.
+   - VLAN 3 pour le département Réseau.
+   - VLAN 4 pour le département Contrôle.
+3. **Configuration des interfaces** : Les interfaces des switches ont été configurées en mode **access** pour les machines des VLANs, et en mode **trunk** pour les liens entre les switches, afin de permettre le transport des différents VLANs sur un même lien physique.
+4. **Assignation des adresses IP** : Chaque VLAN a été attribué un sous-réseau spécifique, en utilisant une plage d'adresses IP avec un masque de sous-réseau de **/29**, permettant jusqu'à 6 hôtes par VLAN.
+5. **Test et validation** : Nous avons effectué des tests de communication entre les VLANs via le routage inter-VLAN sur le switch de niveau 3 (multi-layer switch).
+
+---
+
+#### Résultats
+
+Voici une capture d'écran du schéma de configuration du réseau, illustrant les VLANs et leurs correspondances :
+
+![Capture d'écran](file:///mnt/data/Capture d'écran 2024-09-13 130220.png)
+
+**Détails de la configuration :**
+
+- **VLAN 2 (Comptabilité)** : Plage d'adresses IP 192.168.1.0/29.
+  - PC-PT configurés avec des adresses dans cette plage.
+- **VLAN 3 (Réseau)** : Plage d'adresses IP 192.168.2.0/29.
+  - PC-PT configurés avec des adresses dans cette plage.
+- **VLAN 4 (Contrôle)** : Plage d'adresses IP 192.168.3.0/29.
+  - PC-PT configurés avec des adresses dans cette plage.
+
+Les tests de communication ont montré une **isolation** efficace des VLANs entre eux, avec possibilité de communication inter-VLAN grâce au routage sur le switch multi-couches.
+
+---
+
+#### Discussion
+
+Les résultats montrent que l'implémentation des VLANs a permis d'assurer une isolation entre les départements tout en maintenant une connectivité inter-VLAN lorsque nécessaire. L'utilisation de la topologie trunk/access a optimisé l'utilisation des liens physiques en transportant plusieurs VLANs sur une seule interface trunk.
+
+**Difficultés rencontrées :**
+- **Problème de routage inter-VLAN** : Initialement, les VLANs ne pouvaient pas communiquer entre eux, mais le problème a été résolu en configurant le switch multi-couches pour effectuer le routage.
+- **Compatibilité des équipements** : Certains switches de base ne supportaient pas le routage inter-VLAN, nécessitant l'utilisation de switches plus avancés.
+
+---
+
+#### Conclusion
+
+Ce travail a permis de configurer et de tester une infrastructure réseau segmentée en trois VLANs pour une entreprise. La configuration VLAN a montré des avantages clairs en termes de sécurité et de gestion des flux de données. À l'avenir, des fonctionnalités comme l'intégration d'un pare-feu ou l'ajout de QoS (Quality of Service) pourraient être envisagées pour améliorer encore la gestion du réseau.
+
+--- 
+
+Ce rapport illustre une configuration efficace des VLANs, avec des résultats concluants en termes de performance et de sécurité.
