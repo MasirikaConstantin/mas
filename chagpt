@@ -1,0 +1,103 @@
+Voici un exemple de rapport structuré sur la **configuration de VLANs dans un réseau d'entreprise**. Le rapport suit les consignes que vous avez données :
+
+---
+
+# Rapport de Configuration de VLANs dans un Réseau d'Entreprise
+
+## Introduction
+
+Le but de ce rapport est de présenter la configuration et l'implémentation de réseaux locaux virtuels (VLANs) dans une entreprise. Les VLANs permettent de segmenter un réseau physique en plusieurs réseaux logiques, améliorant ainsi la sécurité et l'efficacité du réseau. Dans le cadre de ce travail, nous avons simulé l'implémentation des VLANs pour une entreprise avec trois départements : **Administration**, **Commercial** et **Technique**. L'objectif est de configurer et tester la séparation des réseaux pour ces trois départements, tout en optimisant la gestion et la sécurité.
+
+## Méthodologie
+
+### Outils utilisés
+Pour réaliser cette simulation, nous avons utilisé **Packet Tracer** comme simulateur de réseau. Ce logiciel permet de configurer et de tester des VLANs de manière réaliste. Voici les principales étapes de la méthodologie :
+
+1. **Création du schéma réseau** :
+   - Ajout de commutateurs (switches) et routeurs.
+   - Connexion des PC représentant les trois départements à des ports différents du switch.
+   
+2. **Configuration des VLANs** :
+   - Définition de trois VLANs correspondant aux départements : 
+     - VLAN 10 : Administration
+     - VLAN 20 : Commercial
+     - VLAN 30 : Technique
+   - Assignation des ports des switches aux VLANs correspondants.
+   
+3. **Configuration du routage inter-VLAN** :
+   - Configuration du routeur pour permettre la communication entre les VLANs via le protocole **Router-on-a-Stick**.
+
+4. **Tests de connectivité** :
+   - Ping entre machines du même VLAN pour vérifier la connectivité.
+   - Ping entre machines de VLANs différents pour vérifier le routage inter-VLAN.
+
+### Étapes principales
+
+- Configuration des switches et des routeurs via l'interface de ligne de commande (CLI).
+- Tests de connectivité en utilisant des commandes comme **ping** et **tracert**.
+- Analyse de la configuration réseau via des captures d'écran et des logs d'exécution des tests.
+
+## Résultats
+
+### Configuration des VLANs
+
+Voici un exemple de configuration des VLANs sur le switch :
+
+```
+Switch(config)# vlan 10
+Switch(config-vlan)# name Administration
+Switch(config)# vlan 20
+Switch(config-vlan)# name Commercial
+Switch(config)# vlan 30
+Switch(config-vlan)# name Technique
+```
+
+Ensuite, les ports du switch ont été assignés aux VLANs respectifs :
+
+```
+Switch(config)# interface range fa0/1-5
+Switch(config-if-range)# switchport mode access
+Switch(config-if-range)# switchport access vlan 10
+```
+
+Une capture d’écran de la configuration VLAN est disponible ci-dessous :
+*(Capture d'écran de la configuration)*
+
+### Résultats des tests
+
+- **Ping intra-VLAN** : Les pings entre les machines d’un même VLAN ont réussi, confirmant la bonne segmentation.
+- **Ping inter-VLAN** : Après configuration du routage inter-VLAN sur le routeur, les machines de différents VLANs ont pu communiquer, ce qui confirme la bonne configuration du routage.
+
+Voici un aperçu des résultats des pings :
+
+```
+PC1> ping 192.168.10.2 (VLAN 10 à VLAN 10) - Réussi
+PC1> ping 192.168.20.2 (VLAN 10 à VLAN 20) - Réussi après configuration du routeur
+```
+
+### Analyse des performances
+
+Les temps de réponse étaient acceptables, confirmant une bonne configuration. Le réseau est bien segmenté et sécurisé.
+
+## Discussion
+
+L'implémentation des VLANs a permis de segmenter efficacement le réseau. Voici quelques points à discuter :
+
+- **Avantages techniques** :
+  - Isolation des départements pour améliorer la sécurité interne.
+  - Réduction du trafic diffusé grâce à la segmentation du réseau.
+  
+- **Difficultés rencontrées** :
+  - L’une des principales difficultés a été la configuration initiale du routage inter-VLAN, qui nécessitait un bon paramétrage des sous-interfaces sur le routeur.
+  - De plus, il était important de configurer correctement les trunks entre les switches pour que le routage entre VLANs soit fonctionnel.
+
+- **Solutions** :
+  - Utilisation d'un guide pour la configuration du **Router-on-a-Stick** et vérification des trunk ports sur les switches pour permettre la communication des VLANs.
+
+## Conclusion
+
+Ce travail a permis de démontrer l’efficacité de l’utilisation des VLANs dans un réseau d’entreprise pour segmenter et sécuriser les départements. La configuration effectuée permet de restreindre la communication entre les différents départements tout en permettant la gestion centralisée via le routage inter-VLAN. En termes de perspectives, il serait intéressant d’implémenter des **politiques de sécurité** supplémentaires pour chaque VLAN, notamment à l’aide de **listes de contrôle d’accès (ACL)** pour améliorer encore la sécurité.
+
+---
+
+Cela constitue un exemple complet que vous pouvez adapter en fonction des détails réels de votre travail et de vos tests.
