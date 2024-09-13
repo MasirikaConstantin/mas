@@ -251,3 +251,57 @@ Utilisez ces commandes pour vérifier si tout est bien configuré :
 - Un **routeur** configuré pour effectuer le **routage inter-VLAN** à l'aide de sous-interfaces.
 
 Cela vous permettra d'étendre la communication entre les VLANs tout en conservant une séparation logique entre les départements.
+
+
+
+<!------------------------------------------------------------------------------------------->
+### Rapport
+
+Je peux vous aider à structurer le rapport pour ce travail sur la configuration de VLANs dans un réseau d'entreprise. Voici une ébauche des différentes sections du rapport basée sur les instructions fournies :
+
+1. Introduction :
+
+Le sujet choisi est la configuration de VLANs dans un réseau d'entreprise comprenant 3 départements. L'objectif de ce travail est de proposer et tester un schéma d'implémentation de VLANs adapté à cette structure organisationnelle.
+
+Les VLANs (Virtual Local Area Networks) permettent de segmenter logiquement un réseau physique en plusieurs réseaux virtuels distincts. Cette technologie est particulièrement utile dans un contexte d'entreprise pour améliorer la sécurité, la gestion du trafic et l'organisation du réseau.
+
+2. Méthodologie :
+
+Pour réaliser ce travail, nous avons suivi les étapes suivantes :
+
+1) Analyse des besoins de l'entreprise et de ses 3 départements
+2) Conception du schéma d'implémentation des VLANs
+3) Configuration des VLANs sur un simulateur réseau (par exemple Cisco Packet Tracer ou GNS3)
+4) Tests de connectivité et de segmentation
+5) Analyse des performances et de la sécurité
+
+Les outils utilisés incluent :
+- Logiciel de simulation réseau (à préciser)
+- Outils de capture et d'analyse de paquets (comme Wireshark)
+- Commandes de diagnostic réseau (ping, traceroute, etc.)
+
+3. Résultats :
+
+Cette section contiendrait :
+- Le schéma d'implémentation des VLANs proposé
+- Des captures d'écran des configurations effectuées sur les switches et routeurs
+- Les résultats des tests de connectivité entre les différents VLANs
+- Des mesures de performance (temps de latence, débit, etc.)
+
+4. Discussion :
+
+Dans cette partie, vous analyseriez les résultats obtenus. Par exemple :
+- Justification technique des choix de configuration des VLANs
+- Analyse de l'efficacité de la segmentation du réseau
+- Évaluation de l'impact sur la sécurité et les performances
+- Description des difficultés rencontrées lors de la mise en place et des solutions trouvées
+
+5. Conclusion :
+
+La conclusion résumerait les points clés du travail effectué, notamment :
+- Rappel des objectifs et de leur atteinte
+- Synthèse des avantages de l'implémentation des VLANs pour l'entreprise
+- Perspectives d'amélioration (par exemple, l'ajout de VLANs supplémentaires pour des besoins futurs)
+- Pistes d'approfondissement (comme l'intégration avec d'autres technologies réseau)
+
+Cette structure de rapport vous permettra de présenter de manière claire et complète votre travail sur la configuration de VLANs dans un réseau d'entreprise. N'hésitez pas si vous avez besoin d'aide pour développer davantage certaines sections ou si vous souhaitez des conseils sur le contenu spécifique à inclure.
