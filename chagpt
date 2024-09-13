@@ -179,3 +179,61 @@ Ce travail a permis de configurer et de tester une infrastructure réseau segmen
 --- 
 
 Ce rapport illustre une configuration efficace des VLANs, avec des résultats concluants en termes de performance et de sécurité.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Rapport sur la Configuration de VLANs dans un Réseau d'Entreprise
+
+## Introduction
+
+Le sujet abordé dans ce rapport concerne la configuration de VLANs (Virtual Local Area Networks) dans un réseau d'entreprise. L'objectif principal est de segmenter le réseau en plusieurs départements, afin d'améliorer la sécurité, la gestion et la performance. Ce travail vise à démontrer l'efficacité des VLANs et à tester cette configuration dans un environnement simulé.
+
+## Méthodologie
+
+Pour réaliser cette configuration, les étapes suivantes ont été suivies :
+
+1. **Choix des outils** : Utilisation d'un simulateur de réseau (tel que Cisco Packet Tracer) pour créer un modèle de réseau.
+   
+2. **Création de VLANs** : Définition de trois VLANs pour les départements suivants :
+   - VLAN 2 : Département Informatique
+   - VLAN 3 : Département Réseau
+   - VLAN 4 : Département Contrôle
+
+3. **Configuration des équipements** :
+   - Configuration des ports des switches en mode access pour les PC des départements.
+   - Configuration des ports en mode trunk entre les switches pour permettre la communication entre VLANs.
+
+4. **Attribution des adresses IP** : Attribution d'adresses IP à chaque VLAN en respectant les sous-réseaux appropriés.
+
+5. **Tests de connectivité** : Réalisation de tests de ping entre les PC des différents VLANs pour vérifier la configuration.
+
+## Résultats
+
+Les captures d'écran et les configurations effectuées sont présentées ci-dessous :
+
+- **Schéma d'implémentation des VLANs** :
+
+![Schéma de Configuration des VLANs][]- **Configurations des VLANs** :Pour le VLAN 2 (Informatique) :```interface FastEthernet0/1 switchport mode access switchport access vlan 2```Pour le VLAN 3 (Réseau) :```interface FastEthernet0/2 switchport mode access switchport access vlan 3```Pour le VLAN 4 (Contrôle) :```interface FastEthernet0/3 switchport mode access switchport access vlan 4```- **Résultats des tests** : Les tests de connectivité ont montré que les PC dans le même VLAN pouvaient communiquer, tandis que les communications entre VLANs étaient bloquées, conformément aux attentes.## DiscussionLes résultats obtenus confirment l'efficacité des VLANs pour la segmentation des réseaux. Chaque département a son propre domaine de diffusion, ce qui améliore la sécurité et réduit le trafic inutile. Cependant, plusieurs difficultés ont été rencontrées :- **Difficultés techniques** : La configuration initiale des VLANs a nécessité des ajustements, notamment en ce qui concerne les paramètres de trunking.  - **Solutions trouvées** : Après avoir identifié que certains ports n'étaient pas configurés correctement, des ajustements ont été effectués pour assurer une communication adéquate entre les switches.## ConclusionEn conclusion, la configuration des VLANs dans un réseau d'entreprise a permis d'atteindre les objectifs fixés. Le travail a démontré la capacité des VLANs à améliorer la gestion du réseau et à renforcer la sécurité. Pour des perspectives d'amélioration, il serait intéressant d'explorer la mise en œuvre de protocoles de routage inter-VLAN afin de permettre la communication entre les départements tout en maintenant des politiques de sécurité appropriées.
